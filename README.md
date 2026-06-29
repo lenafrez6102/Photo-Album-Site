@@ -222,6 +222,11 @@ Click the share button on the album card. A share link will be in your copyboard
 
 ---
 
+### Major Note about Cloudinary Storage
+The storage of Cloudinary is not infinite, so if you want to continue using for many photos, there are paid subscriptions. However, there are also other cheaper alternatives such as Backblaze and Cloudflare.
+
+---
+
 ## License
 
 MIT — free to use and modify for personal projects.
