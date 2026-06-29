@@ -7,9 +7,8 @@ import { ImageMenu } from '@/components/image-menu';
 import { DeleteImageButton } from '@/components/delete-image-button';
 import { Lightbox } from '@/components/lightbox';
 
-export function AlbumGrid({ images, folderId }: { images: SearchResult[]; folderId: string }) {
+export function AlbumGrid({ images, folderId, isGuest = false }: { images: SearchResult[]; folderId: string; isGuest?: boolean }) {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
-
   return (
     <>
       <ImageGrid
@@ -21,16 +20,21 @@ export function AlbumGrid({ images, folderId }: { images: SearchResult[]; folder
                 <CloudinaryImage
                   imageData={imageData}
                   alt="Description of image"
+                  isGuest={isGuest}
                 />
               </div>
-              <div style={{ position: 'absolute', top: 8, left: 8 }}>
-                <DeleteImageButton image={imageData} />
-              </div>
-              <ImageMenu
-                image={imageData}
-                folderId={folderId}
-                style={{ position: 'absolute', top: 8, right: 8 }}
-              />
+              {!isGuest && (
+                <div style={{ position: 'absolute', top: 8, left: 8 }}>
+                  <DeleteImageButton image={imageData} />
+                </div>
+              )}
+              {!isGuest && (
+                <ImageMenu
+                  image={imageData}
+                  folderId={folderId}
+                  style={{ position: 'absolute', top: 8, right: 8 }}
+                />
+              )}
             </div>
           );
         }}
