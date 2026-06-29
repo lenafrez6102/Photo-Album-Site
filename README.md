@@ -13,6 +13,7 @@ A full-stack personal photo and video album built with Next.js and Cloudinary. U
 - **Settings** — Customize your site name, profile picture, background color, and text color
 - **Authentication** — Password-protected so only you and your family can access it
 - **Responsive** — Works on desktop and mobile
+- **Share Album/Guest View** — Guests who do not have password can view shared photo albums via share link from owner
 
 ---
 
@@ -186,17 +187,18 @@ app/
 ├── favorites/             # Favorites page and list component
 ├── gallery/               # Gallery page, grid, and server actions
 ├── login/                 # Login page
+├── share/[albumTag]       # Guest share route -- sets guest cookie and redirects
 └── layout.tsx             # Root layout with FavoritesProvider, sidebar, and header
 components/
 ├── icons/                 # SVG icon components
 ├── ui/                    # shadcn/ui components
-├── cloudinary-image.tsx   # Image/video card with favorite toggle and menu
+├── cloudinary-image.tsx   # Image/video card with favorite toggle and menu (guest-aware)
 ├── favorites-context.tsx  # Global favorites state (React Context)
 ├── image-grid.tsx         # Masonry grid layout
 ├── image-menu.tsx         # Per-image dropdown (add/remove/move album)
 ├── lightbox.tsx           # Full screen media viewer
 ├── settings-menu.tsx      # Site settings dialog
-└── side-menu.tsx          # Sidebar navigation with active route highlight
+└── side-menu.tsx          # Sidebar navigation with active route highlight (hidden for guests)
 ```
 
 ---
@@ -214,6 +216,9 @@ Click the **⋮** menu on any photo or video and select **Add to Album**. Choose
 
 ### Settings
 Click your profile picture in the top right to open Settings. You can change your site name, profile picture, background color, and text color. Colors persist via `localStorage`.
+
+### Sharing Photo Albums (Guest View)
+Click the share button on the album card. A share link will be in your copyboard and can be pasted to anyone you want. Guests that don't have access to the site via password will be put into guest-view, only capable of viewing photos and videos of shared album. 
 
 ---
 
