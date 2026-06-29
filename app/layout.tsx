@@ -10,8 +10,8 @@ import cloudinary from "@/lib/cloudinary";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Padua",
-  description: "Padua family album.",
+  title: "Photo Album",
+  description: "Photo family album.",
 };
 
 export default async function RootLayout({
