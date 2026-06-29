@@ -1,6 +1,6 @@
 # Photo-Album-Site
 
-A full-stack personal photo and video album built with Typescript, CSS, Next.js and Cloudinary. Upload, organize, and share your memories with a clean, modern interface.
+A full-stack personal photo and video album built with Typescript, CSS, Javascript, Next.js and Cloudinary. Upload, organize, and share your memories with a clean, modern interface.
 
 ## Features
 
