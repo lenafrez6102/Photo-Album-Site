@@ -58,7 +58,7 @@ export async function getSiteSettings() {
     const settings = await response.json();
     return settings as { name: string; profilePicPublicId?: string };
   } catch {
-    return { name: 'Padua', profilePicPublicId: undefined };
+    return { name: 'Photo Album', profilePicPublicId: undefined };
   }
 }
 
